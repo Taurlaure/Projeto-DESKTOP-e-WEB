@@ -1,9 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projeto", "Projeto\Projeto.csproj", "{1B582D79-F808-4711-BD62-0150C8B004EE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "P.Interface", "P.Interface", "{498367BF-CC14-4D5A-A8BB-0332F51A4EAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "P.Modelo", "P.Modelo", "{F2228B7C-0C76-47FB-856B-531C8F853833}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ASP.NET MVC", "ASP.NET MVC", "{4E4CB46E-8F2D-4594-8E32-B0CC7A1519A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WindowsForms", "WindowsForms", "{2A858BCF-380F-4DE5-B104-6B5CC2274D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P.Modelo", "Projeto\P.Modelo\P.Modelo\P.Modelo.csproj", "{C13B0227-368F-4C6D-82F0-B375E85E9801}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P.WindowsForms", "Projeto\P.Interface\WindowsForms\P.WindowsForms\P.WindowsForms.csproj", "{2695E276-8185-4156-AB19-984EAD592FCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +21,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1B582D79-F808-4711-BD62-0150C8B004EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1B582D79-F808-4711-BD62-0150C8B004EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1B582D79-F808-4711-BD62-0150C8B004EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1B582D79-F808-4711-BD62-0150C8B004EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C13B0227-368F-4C6D-82F0-B375E85E9801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C13B0227-368F-4C6D-82F0-B375E85E9801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C13B0227-368F-4C6D-82F0-B375E85E9801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C13B0227-368F-4C6D-82F0-B375E85E9801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2695E276-8185-4156-AB19-984EAD592FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2695E276-8185-4156-AB19-984EAD592FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2695E276-8185-4156-AB19-984EAD592FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2695E276-8185-4156-AB19-984EAD592FCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4E4CB46E-8F2D-4594-8E32-B0CC7A1519A2} = {498367BF-CC14-4D5A-A8BB-0332F51A4EAF}
+		{2A858BCF-380F-4DE5-B104-6B5CC2274D97} = {498367BF-CC14-4D5A-A8BB-0332F51A4EAF}
+		{C13B0227-368F-4C6D-82F0-B375E85E9801} = {F2228B7C-0C76-47FB-856B-531C8F853833}
+		{2695E276-8185-4156-AB19-984EAD592FCC} = {2A858BCF-380F-4DE5-B104-6B5CC2274D97}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8085D6E5-4CE1-45E6-9231-064657C84968}
 	EndGlobalSection
 EndGlobal

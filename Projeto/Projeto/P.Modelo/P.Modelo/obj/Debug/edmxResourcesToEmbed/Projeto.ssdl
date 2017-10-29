@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="faculdadeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="idPessoaAluno" />
+    </Key>
+    <Property Name="idPessoaAluno" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlunoDisciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+      <PropertyRef Name="idPessoaAluno" />
+    </Key>
+    <Property Name="idDisciplina" Type="int" Nullable="false" />
+    <Property Name="idPessoaAluno" Type="int" Nullable="false" />
+    <Property Name="nota" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+    </Key>
+    <Property Name="idDisciplina" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="idEndereco" />
+    </Key>
+    <Property Name="idEndereco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logradouro" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="numero" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEndereco" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Professor">
+    <Key>
+      <PropertyRef Name="idPessoaProfessor" />
+    </Key>
+    <Property Name="idPessoaProfessor" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProfessorDisciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+      <PropertyRef Name="idPessoaProfessor" />
+    </Key>
+    <Property Name="idDisciplina" Type="int" Nullable="false" />
+    <Property Name="idPessoaProfessor" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="id_fk_disciplinaAluno">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="AlunoDisciplina" Type="Self.AlunoDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="AlunoDisciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_disciplinaProfessor">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="ProfessorDisciplina" Type="Self.ProfessorDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="ProfessorDisciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_endereco">
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="idEndereco" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="idEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaAluno">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="idPessoaAluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaAlunoDisciplina">
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+    <End Role="AlunoDisciplina" Type="Self.AlunoDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="idPessoaAluno" />
+      </Principal>
+      <Dependent Role="AlunoDisciplina">
+        <PropertyRef Name="idPessoaAluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaProfessor">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Professor">
+        <PropertyRef Name="idPessoaProfessor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaProfessorDisciplina">
+    <End Role="Professor" Type="Self.Professor" Multiplicity="1" />
+    <End Role="ProfessorDisciplina" Type="Self.ProfessorDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Professor">
+        <PropertyRef Name="idPessoaProfessor" />
+      </Principal>
+      <Dependent Role="ProfessorDisciplina">
+        <PropertyRef Name="idPessoaProfessor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="faculdadeModelStoreContainer">
+    <EntitySet Name="Aluno" EntityType="Self.Aluno" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlunoDisciplina" EntityType="Self.AlunoDisciplina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disciplina" EntityType="Self.Disciplina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pessoa" EntityType="Self.Pessoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Professor" EntityType="Self.Professor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfessorDisciplina" EntityType="Self.ProfessorDisciplina" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="id_fk_disciplinaAluno" Association="Self.id_fk_disciplinaAluno">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_disciplinaProfessor" Association="Self.id_fk_disciplinaProfessor">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="ProfessorDisciplina" EntitySet="ProfessorDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaAluno" Association="Self.id_fk_pessoaAluno">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaAlunoDisciplina" Association="Self.id_fk_pessoaAlunoDisciplina">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaProfessor" Association="Self.id_fk_pessoaProfessor">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Professor" EntitySet="Professor" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaProfessorDisciplina" Association="Self.id_fk_pessoaProfessorDisciplina">
+      <End Role="Professor" EntitySet="Professor" />
+      <End Role="ProfessorDisciplina" EntitySet="ProfessorDisciplina" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

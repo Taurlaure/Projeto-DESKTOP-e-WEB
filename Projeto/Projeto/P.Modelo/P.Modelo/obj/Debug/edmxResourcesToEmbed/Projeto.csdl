@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="faculdadeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="idPessoaAluno" />
+    </Key>
+    <Property Name="idPessoaAluno" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_pessoaAluno" FromRole="Aluno" ToRole="Pessoa" />
+    <NavigationProperty Name="AlunoDisciplina" Relationship="Self.id_fk_pessoaAlunoDisciplina" FromRole="Aluno" ToRole="AlunoDisciplina" />
+  </EntityType>
+  <EntityType Name="AlunoDisciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+      <PropertyRef Name="idPessoaAluno" />
+    </Key>
+    <Property Name="idDisciplina" Type="Int32" Nullable="false" />
+    <Property Name="idPessoaAluno" Type="Int32" Nullable="false" />
+    <Property Name="nota" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAlunoDisciplina" FromRole="AlunoDisciplina" ToRole="Aluno" />
+    <NavigationProperty Name="Disciplina" Relationship="Self.id_fk_disciplinaAluno" FromRole="AlunoDisciplina" ToRole="Disciplina" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="idDisciplina" />
+    </Key>
+    <Property Name="idDisciplina" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AlunoDisciplina" Relationship="Self.id_fk_disciplinaAluno" FromRole="Disciplina" ToRole="AlunoDisciplina" />
+    <NavigationProperty Name="Professor" Relationship="Self.ProfessorDisciplina" FromRole="Disciplina" ToRole="Professor" />
+  </EntityType>
+  <EntityType Name="Endereco">
+    <Key>
+      <PropertyRef Name="idEndereco" />
+    </Key>
+    <Property Name="idEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="logradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_endereco" FromRole="Endereco" ToRole="Pessoa" />
+  </EntityType>
+  <EntityType Name="Pessoa">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+    </Key>
+    <Property Name="idPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEndereco" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAluno" FromRole="Pessoa" ToRole="Aluno" />
+    <NavigationProperty Name="Endereco" Relationship="Self.id_fk_endereco" FromRole="Pessoa" ToRole="Endereco" />
+    <NavigationProperty Name="Professor" Relationship="Self.id_fk_pessoaProfessor" FromRole="Pessoa" ToRole="Professor" />
+  </EntityType>
+  <EntityType Name="Professor">
+    <Key>
+      <PropertyRef Name="idPessoaProfessor" />
+    </Key>
+    <Property Name="idPessoaProfessor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_pessoaProfessor" FromRole="Professor" ToRole="Pessoa" />
+    <NavigationProperty Name="Disciplina" Relationship="Self.ProfessorDisciplina" FromRole="Professor" ToRole="Disciplina" />
+  </EntityType>
+  <Association Name="id_fk_pessoaAluno">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Aluno">
+        <PropertyRef Name="idPessoaAluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaAlunoDisciplina">
+    <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+    <End Role="AlunoDisciplina" Type="Self.AlunoDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="idPessoaAluno" />
+      </Principal>
+      <Dependent Role="AlunoDisciplina">
+        <PropertyRef Name="idPessoaAluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_disciplinaAluno">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="1" />
+    <End Role="AlunoDisciplina" Type="Self.AlunoDisciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Principal>
+      <Dependent Role="AlunoDisciplina">
+        <PropertyRef Name="idDisciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_endereco">
+    <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Endereco">
+        <PropertyRef Name="idEndereco" />
+      </Principal>
+      <Dependent Role="Pessoa">
+        <PropertyRef Name="idEndereco" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="id_fk_pessoaProfessor">
+    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
+    <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoa">
+        <PropertyRef Name="idPessoa" />
+      </Principal>
+      <Dependent Role="Professor">
+        <PropertyRef Name="idPessoaProfessor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfessorDisciplina">
+    <End Role="Disciplina" Type="Self.Disciplina" Multiplicity="*" />
+    <End Role="Professor" Type="Self.Professor" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="faculdadeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aluno" EntityType="Self.Aluno" />
+    <EntitySet Name="AlunoDisciplina" EntityType="Self.AlunoDisciplina" />
+    <EntitySet Name="Disciplina" EntityType="Self.Disciplina" />
+    <EntitySet Name="Endereco" EntityType="Self.Endereco" />
+    <EntitySet Name="Pessoa" EntityType="Self.Pessoa" />
+    <EntitySet Name="Professor" EntityType="Self.Professor" />
+    <AssociationSet Name="id_fk_pessoaAluno" Association="Self.id_fk_pessoaAluno">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Aluno" EntitySet="Aluno" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaAlunoDisciplina" Association="Self.id_fk_pessoaAlunoDisciplina">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_disciplinaAluno" Association="Self.id_fk_disciplinaAluno">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
+      <End Role="Endereco" EntitySet="Endereco" />
+      <End Role="Pessoa" EntitySet="Pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="id_fk_pessoaProfessor" Association="Self.id_fk_pessoaProfessor">
+      <End Role="Pessoa" EntitySet="Pessoa" />
+      <End Role="Professor" EntitySet="Professor" />
+    </AssociationSet>
+    <AssociationSet Name="ProfessorDisciplina" Association="Self.ProfessorDisciplina">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Professor" EntitySet="Professor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

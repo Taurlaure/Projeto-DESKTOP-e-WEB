@@ -1,0 +1,10 @@
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\bin\Debug\P.WindowsForms.exe.config
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\bin\Debug\P.WindowsForms.exe
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\bin\Debug\P.WindowsForms.pdb
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.Formularios.FormPrincipal.resources
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.Properties.Resources.resources
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.csproj.GenerateResource.Cache
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.exe
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.pdb

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="faculdadeModelStoreContainer" CdmEntityContainer="faculdadeEntities">
+    <EntitySetMapping Name="Aluno">
+      <EntityTypeMapping TypeName="faculdadeModel.Aluno">
+        <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="idPessoaAluno" ColumnName="idPessoaAluno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlunoDisciplina">
+      <EntityTypeMapping TypeName="faculdadeModel.AlunoDisciplina">
+        <MappingFragment StoreEntitySet="AlunoDisciplina">
+          <ScalarProperty Name="idDisciplina" ColumnName="idDisciplina" />
+          <ScalarProperty Name="idPessoaAluno" ColumnName="idPessoaAluno" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disciplina">
+      <EntityTypeMapping TypeName="faculdadeModel.Disciplina">
+        <MappingFragment StoreEntitySet="Disciplina">
+          <ScalarProperty Name="idDisciplina" ColumnName="idDisciplina" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Endereco">
+      <EntityTypeMapping TypeName="faculdadeModel.Endereco">
+        <MappingFragment StoreEntitySet="Endereco">
+          <ScalarProperty Name="idEndereco" ColumnName="idEndereco" />
+          <ScalarProperty Name="logradouro" ColumnName="logradouro" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoa">
+      <EntityTypeMapping TypeName="faculdadeModel.Pessoa">
+        <MappingFragment StoreEntitySet="Pessoa">
+          <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
+          <ScalarProperty Name="idEndereco" ColumnName="idEndereco" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Professor">
+      <EntityTypeMapping TypeName="faculdadeModel.Professor">
+        <MappingFragment StoreEntitySet="Professor">
+          <ScalarProperty Name="idPessoaProfessor" ColumnName="idPessoaProfessor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ProfessorDisciplina" TypeName="faculdadeModel.ProfessorDisciplina" StoreEntitySet="ProfessorDisciplina">
+      <EndProperty Name="Disciplina">
+        <ScalarProperty Name="idDisciplina" ColumnName="idDisciplina" />
+      </EndProperty>
+      <EndProperty Name="Professor">
+        <ScalarProperty Name="idPessoaProfessor" ColumnName="idPessoaProfessor" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

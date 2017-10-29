@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5dce783f14e240568e7a24ed08203316" Name="Diagram1">
-        <EntityTypeShape EntityType="faculdadeModel.Aluno" Width="1.5" PointX="6.625" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="faculdadeModel.AlunoDisciplina" Width="1.5" PointX="8.875" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="faculdadeModel.Disciplina" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="faculdadeModel.Aluno" Width="1.5" PointX="6.875" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="faculdadeModel.AlunoDisciplina" Width="1.5" PointX="10.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="faculdadeModel.Disciplina" Width="1.5" PointX="5.375" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="faculdadeModel.Endereco" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="faculdadeModel.Pessoa" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="faculdadeModel.Professor" Width="1.5" PointX="4.5" PointY="0.875" IsExpanded="true" />

@@ -32,6 +32,7 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.professorToolStripMenuItem,
-            this.alunoToolStripMenuItem});
+            this.alunoToolStripMenuItem,
+            this.disciplinaToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -66,6 +68,13 @@
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
             this.alunoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alunoToolStripMenuItem.Text = "Aluno";
+            // 
+            // disciplinaToolStripMenuItem
+            // 
+            this.disciplinaToolStripMenuItem.Name = "disciplinaToolStripMenuItem";
+            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disciplinaToolStripMenuItem.Text = "Disciplina";
+            this.disciplinaToolStripMenuItem.Click += new System.EventHandler(this.disciplinaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -91,5 +100,6 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disciplinaToolStripMenuItem;
     }
 }

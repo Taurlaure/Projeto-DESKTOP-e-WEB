@@ -8,3 +8,5 @@ C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.exe
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.pdb
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.Formularios.FormProfessor.resources
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Interface\WindowsForms\P.WindowsForms\obj\Debug\P.WindowsForms.Formularios.FormDisciplina.resources

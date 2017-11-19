@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\FormAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormAluno.Designer.cs">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\FormAluno.resx">
+      <DependentUpon>FormAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormDisciplina.resx">
       <DependentUpon>FormDisciplina.cs</DependentUpon>
     </EmbeddedResource>

@@ -39,7 +39,7 @@ namespace P.WindowsForms.Formularios
             dataGridProfessor.Columns[0].Name = "IdPessoaProfessor";
             dataGridProfessor.Columns[0].Width = 50;
 
-            dataGridProfessor.Columns[1].HeaderText = "Nome";
+            dataGridProfessor.Columns[1].HeaderText = "Nome Professor";
             dataGridProfessor.Columns[1].DataPropertyName = "nome";
             dataGridProfessor.Columns[1].Name = "nome";
             dataGridProfessor.Columns[1].Width = 150;

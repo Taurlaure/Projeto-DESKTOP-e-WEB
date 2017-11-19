@@ -44,5 +44,12 @@ namespace P.WindowsForms.Formularios
             formProfessor.MdiParent = this;
             formProfessor.Show();
         }
+
+        private void alunoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormAluno formAluno = new FormAluno();
+            formAluno.MdiParent = this;
+            formAluno.Show();
+        }
     }
 }

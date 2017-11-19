@@ -31,9 +31,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,13 +66,6 @@
             this.pessoaToolStripMenuItem.Text = "Pessoa";
             this.pessoaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
-            // disciplinaToolStripMenuItem
-            // 
-            this.disciplinaToolStripMenuItem.Name = "disciplinaToolStripMenuItem";
-            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.disciplinaToolStripMenuItem.Text = "Disciplina";
-            this.disciplinaToolStripMenuItem.Click += new System.EventHandler(this.disciplinaToolStripMenuItem_Click);
-            // 
             // professorToolStripMenuItem
             // 
             this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
@@ -85,6 +78,14 @@
             this.alunoToolStripMenuItem1.Name = "alunoToolStripMenuItem1";
             this.alunoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.alunoToolStripMenuItem1.Text = "Aluno";
+            this.alunoToolStripMenuItem1.Click += new System.EventHandler(this.alunoToolStripMenuItem1_Click);
+            // 
+            // disciplinaToolStripMenuItem
+            // 
+            this.disciplinaToolStripMenuItem.Name = "disciplinaToolStripMenuItem";
+            this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.disciplinaToolStripMenuItem.Text = "Disciplina";
+            this.disciplinaToolStripMenuItem.Click += new System.EventHandler(this.disciplinaToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 

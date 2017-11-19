@@ -34,6 +34,8 @@
             this.btnSalvarDisciplina = new System.Windows.Forms.Button();
             this.btnEditarDisciplina = new System.Windows.Forms.Button();
             this.btnExcluirDisc = new System.Windows.Forms.Button();
+            this.comboBoxProfessor = new System.Windows.Forms.ComboBox();
+            this.labelprof = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDisciplina)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,11 +94,30 @@
             this.btnExcluirDisc.UseVisualStyleBackColor = true;
             this.btnExcluirDisc.Click += new System.EventHandler(this.btnExcluirDisc_Click);
             // 
+            // comboBoxProfessor
+            // 
+            this.comboBoxProfessor.FormattingEnabled = true;
+            this.comboBoxProfessor.Location = new System.Drawing.Point(102, 87);
+            this.comboBoxProfessor.Name = "comboBoxProfessor";
+            this.comboBoxProfessor.Size = new System.Drawing.Size(229, 21);
+            this.comboBoxProfessor.TabIndex = 8;
+            // 
+            // labelprof
+            // 
+            this.labelprof.AutoSize = true;
+            this.labelprof.Location = new System.Drawing.Point(45, 90);
+            this.labelprof.Name = "labelprof";
+            this.labelprof.Size = new System.Drawing.Size(51, 13);
+            this.labelprof.TabIndex = 9;
+            this.labelprof.Text = "Professor";
+            // 
             // FormDisciplina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1269, 661);
+            this.Controls.Add(this.labelprof);
+            this.Controls.Add(this.comboBoxProfessor);
             this.Controls.Add(this.btnExcluirDisc);
             this.Controls.Add(this.btnEditarDisciplina);
             this.Controls.Add(this.btnSalvarDisciplina);
@@ -120,5 +141,7 @@
         private System.Windows.Forms.Button btnSalvarDisciplina;
         private System.Windows.Forms.Button btnEditarDisciplina;
         private System.Windows.Forms.Button btnExcluirDisc;
+        private System.Windows.Forms.ComboBox comboBoxProfessor;
+        private System.Windows.Forms.Label labelprof;
     }
 }

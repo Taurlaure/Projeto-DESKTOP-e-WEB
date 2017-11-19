@@ -12,14 +12,18 @@ using System.Data.Entity;
 
 namespace P.WindowsForms.Formularios
 {
+    
     public partial class FormPessoa : Form
     {
         faculdadeEntities db = new faculdadeEntities();
         private Pessoa pessoa;
+
         public FormPessoa()
         {
             InitializeComponent();
         }
+
+  
         private void FormPessoa_Load(object sender, EventArgs e)
         {
             dataGridPessoa.ColumnCount = 2;
@@ -41,20 +45,20 @@ namespace P.WindowsForms.Formularios
             carregarGrid();
         }
 
+
         public void carregarGrid()
         {
             var pessoas = from pessoa in db.Pessoa
-                              select (new
-                              {
-                                  pessoa.idPessoa,
-                                  pessoa.nome
+                          select (new
+                          {
+                              pessoa.idPessoa,
+                              pessoa.nome
 
-                              });
+                          });
 
 
             dataGridPessoa.DataSource = pessoas.ToList();
         }
-
 
         public void limparCampos()
         {

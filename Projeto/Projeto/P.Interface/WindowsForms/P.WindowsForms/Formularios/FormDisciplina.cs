@@ -17,6 +17,7 @@ namespace P.WindowsForms.Formularios
     {
         faculdadeEntities db = new faculdadeEntities();
         private Disciplina disciplina;
+ 
 
         public FormDisciplina()
         {
@@ -25,7 +26,9 @@ namespace P.WindowsForms.Formularios
 
         private void FormDisciplina_Load(object sender, EventArgs e)
         {
-            dataGridDisciplina.ColumnCount = 3;
+
+
+            dataGridDisciplina.ColumnCount = 2;
             dataGridDisciplina.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridDisciplina.MultiSelect = false;
             dataGridDisciplina.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -41,10 +44,6 @@ namespace P.WindowsForms.Formularios
             dataGridDisciplina.Columns[1].Width = 150;
             dataGridDisciplina.Columns[1].Name = "Descricao";
 
-            dataGridDisciplina.Columns[2].HeaderText = "Professor";
-            dataGridDisciplina.Columns[2].DataPropertyName = "Professor";
-            dataGridDisciplina.Columns[2].Width = 150;
-            dataGridDisciplina.Columns[2].Name = "Professor";
 
             carregarGrid();
         }
@@ -55,8 +54,7 @@ namespace P.WindowsForms.Formularios
                               select (new
                               {
                                   disciplina.idDisciplina,
-                                  disciplina.descricao,
-                                  disciplina.Professor
+                                  disciplina.descricao
                               });
 
 

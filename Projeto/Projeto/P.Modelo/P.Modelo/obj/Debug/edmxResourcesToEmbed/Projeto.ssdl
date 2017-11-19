@@ -35,7 +35,6 @@
       <PropertyRef Name="idPessoa" />
     </Key>
     <Property Name="idPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="idEndereco" Type="int" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
   <EntityType Name="Professor">
@@ -73,18 +72,6 @@
       </Principal>
       <Dependent Role="ProfessorDisciplina">
         <PropertyRef Name="idDisciplina" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="id_fk_endereco">
-    <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
-    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Endereco">
-        <PropertyRef Name="idEndereco" />
-      </Principal>
-      <Dependent Role="Pessoa">
-        <PropertyRef Name="idEndereco" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -151,10 +138,6 @@
     <AssociationSet Name="id_fk_disciplinaProfessor" Association="Self.id_fk_disciplinaProfessor">
       <End Role="Disciplina" EntitySet="Disciplina" />
       <End Role="ProfessorDisciplina" EntitySet="ProfessorDisciplina" />
-    </AssociationSet>
-    <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
-      <End Role="Endereco" EntitySet="Endereco" />
-      <End Role="Pessoa" EntitySet="Pessoa" />
     </AssociationSet>
     <AssociationSet Name="id_fk_pessoaAluno" Association="Self.id_fk_pessoaAluno">
       <End Role="Pessoa" EntitySet="Pessoa" />

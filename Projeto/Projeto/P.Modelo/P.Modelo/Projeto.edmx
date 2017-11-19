@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="faculdadeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="faculdadeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Aluno">
           <Key>
             <PropertyRef Name="idPessoaAluno" />
@@ -40,7 +40,6 @@
             <PropertyRef Name="idPessoa" />
           </Key>
           <Property Name="idPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="idEndereco" Type="int" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Professor">
@@ -78,18 +77,6 @@
             </Principal>
             <Dependent Role="ProfessorDisciplina">
               <PropertyRef Name="idDisciplina" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="id_fk_endereco">
-          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Endereco">
-              <PropertyRef Name="idEndereco" />
-            </Principal>
-            <Dependent Role="Pessoa">
-              <PropertyRef Name="idEndereco" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -157,10 +144,6 @@
             <End Role="Disciplina" EntitySet="Disciplina" />
             <End Role="ProfessorDisciplina" EntitySet="ProfessorDisciplina" />
           </AssociationSet>
-          <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
-            <End Role="Endereco" EntitySet="Endereco" />
-            <End Role="Pessoa" EntitySet="Pessoa" />
-          </AssociationSet>
           <AssociationSet Name="id_fk_pessoaAluno" Association="Self.id_fk_pessoaAluno">
             <End Role="Pessoa" EntitySet="Pessoa" />
             <End Role="Aluno" EntitySet="Aluno" />
@@ -178,8 +161,7 @@
             <End Role="ProfessorDisciplina" EntitySet="ProfessorDisciplina" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="faculdadeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -218,17 +200,14 @@
           <Property Name="idEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="logradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_endereco" FromRole="Endereco" ToRole="Pessoa" />
         </EntityType>
         <EntityType Name="Pessoa">
           <Key>
             <PropertyRef Name="idPessoa" />
           </Key>
           <Property Name="idPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="idEndereco" Type="Int32" Nullable="false" />
           <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAluno" FromRole="Pessoa" ToRole="Aluno" />
-          <NavigationProperty Name="Endereco" Relationship="Self.id_fk_endereco" FromRole="Pessoa" ToRole="Endereco" />
           <NavigationProperty Name="Professor" Relationship="Self.id_fk_pessoaProfessor" FromRole="Pessoa" ToRole="Professor" />
         </EntityType>
         <EntityType Name="Professor">
@@ -275,18 +254,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="id_fk_endereco">
-          <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
-          <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Endereco">
-              <PropertyRef Name="idEndereco" />
-            </Principal>
-            <Dependent Role="Pessoa">
-              <PropertyRef Name="idEndereco" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="id_fk_pessoaProfessor">
           <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
           <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
@@ -321,10 +288,6 @@
           <AssociationSet Name="id_fk_disciplinaAluno" Association="Self.id_fk_disciplinaAluno">
             <End Role="Disciplina" EntitySet="Disciplina" />
             <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
-          </AssociationSet>
-          <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
-            <End Role="Endereco" EntitySet="Endereco" />
-            <End Role="Pessoa" EntitySet="Pessoa" />
           </AssociationSet>
           <AssociationSet Name="id_fk_pessoaProfessor" Association="Self.id_fk_pessoaProfessor">
             <End Role="Pessoa" EntitySet="Pessoa" />
@@ -378,7 +341,6 @@
             <EntityTypeMapping TypeName="faculdadeModel.Pessoa">
               <MappingFragment StoreEntitySet="Pessoa">
                 <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
-                <ScalarProperty Name="idEndereco" ColumnName="idEndereco" />
                 <ScalarProperty Name="nome" ColumnName="nome" />
               </MappingFragment>
             </EntityTypeMapping>

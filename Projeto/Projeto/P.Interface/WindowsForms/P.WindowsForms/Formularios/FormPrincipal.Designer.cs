@@ -30,9 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disciplinaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alunoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,25 +50,21 @@
             // cadastroToolStripMenuItem
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.professorToolStripMenuItem,
-            this.alunoToolStripMenuItem,
+            this.pessoaToolStripMenuItem,
             this.disciplinaToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
-            // professorToolStripMenuItem
+            // pessoaToolStripMenuItem
             // 
-            this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
-            this.professorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.professorToolStripMenuItem.Text = "Professor";
-            this.professorToolStripMenuItem.Click += new System.EventHandler(this.professorToolStripMenuItem_Click);
-            // 
-            // alunoToolStripMenuItem
-            // 
-            this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.alunoToolStripMenuItem.Text = "Aluno";
+            this.pessoaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.professorToolStripMenuItem,
+            this.alunoToolStripMenuItem1});
+            this.pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
+            this.pessoaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pessoaToolStripMenuItem.Text = "Pessoa";
+            this.pessoaToolStripMenuItem.Click += new System.EventHandler(this.pessoaToolStripMenuItem_Click);
             // 
             // disciplinaToolStripMenuItem
             // 
@@ -75,6 +72,19 @@
             this.disciplinaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.disciplinaToolStripMenuItem.Text = "Disciplina";
             this.disciplinaToolStripMenuItem.Click += new System.EventHandler(this.disciplinaToolStripMenuItem_Click);
+            // 
+            // professorToolStripMenuItem
+            // 
+            this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
+            this.professorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.professorToolStripMenuItem.Text = "Professor";
+            this.professorToolStripMenuItem.Click += new System.EventHandler(this.professorToolStripMenuItem_Click_1);
+            // 
+            // alunoToolStripMenuItem1
+            // 
+            this.alunoToolStripMenuItem1.Name = "alunoToolStripMenuItem1";
+            this.alunoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.alunoToolStripMenuItem1.Text = "Aluno";
             // 
             // FormPrincipal
             // 
@@ -98,8 +108,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem disciplinaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pessoaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem1;
     }
 }

@@ -58,6 +58,12 @@
     <Compile Include="Formularios\FormDisciplina.Designer.cs">
       <DependentUpon>FormDisciplina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormPessoa.Designer.cs">
+      <DependentUpon>FormPessoa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\FormDisciplina.resx">
       <DependentUpon>FormDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormPessoa.resx">
+      <DependentUpon>FormPessoa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>

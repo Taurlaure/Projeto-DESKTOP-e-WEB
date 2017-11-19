@@ -5,7 +5,6 @@ C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\bin\Deb
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\bin\Debug\EntityFramework.xml
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.csprojResolveAssemblyReference.cache
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.dll
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.pdb

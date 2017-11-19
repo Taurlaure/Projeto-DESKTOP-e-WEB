@@ -14,17 +14,8 @@ namespace P.Modelo
     
     public partial class Endereco
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Endereco()
-        {
-            this.Pessoa = new HashSet<Pessoa>();
-        }
-    
         public int idEndereco { get; set; }
         public string logradouro { get; set; }
         public int numero { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pessoa> Pessoa { get; set; }
     }
 }

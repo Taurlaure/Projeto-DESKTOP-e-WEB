@@ -30,8 +30,6 @@
         {
             this.nomeDisc = new System.Windows.Forms.Label();
             this.textBoxNomeDisciplina = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.profSelecionar = new System.Windows.Forms.Label();
             this.dataGridDisciplina = new System.Windows.Forms.DataGridView();
             this.btnSalvarDisciplina = new System.Windows.Forms.Button();
             this.btnEditarDisciplina = new System.Windows.Forms.Button();
@@ -54,23 +52,6 @@
             this.textBoxNomeDisciplina.Name = "textBoxNomeDisciplina";
             this.textBoxNomeDisciplina.Size = new System.Drawing.Size(229, 20);
             this.textBoxNomeDisciplina.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
-            this.comboBox1.TabIndex = 2;
-            // 
-            // profSelecionar
-            // 
-            this.profSelecionar.AutoSize = true;
-            this.profSelecionar.Location = new System.Drawing.Point(58, 78);
-            this.profSelecionar.Name = "profSelecionar";
-            this.profSelecionar.Size = new System.Drawing.Size(54, 13);
-            this.profSelecionar.TabIndex = 3;
-            this.profSelecionar.Text = "Professor:";
             // 
             // dataGridDisciplina
             // 
@@ -120,8 +101,6 @@
             this.Controls.Add(this.btnEditarDisciplina);
             this.Controls.Add(this.btnSalvarDisciplina);
             this.Controls.Add(this.dataGridDisciplina);
-            this.Controls.Add(this.profSelecionar);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBoxNomeDisciplina);
             this.Controls.Add(this.nomeDisc);
             this.Name = "FormDisciplina";
@@ -137,8 +116,6 @@
 
         private System.Windows.Forms.Label nomeDisc;
         private System.Windows.Forms.TextBox textBoxNomeDisciplina;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label profSelecionar;
         private System.Windows.Forms.DataGridView dataGridDisciplina;
         private System.Windows.Forms.Button btnSalvarDisciplina;
         private System.Windows.Forms.Button btnEditarDisciplina;

@@ -30,5 +30,19 @@ namespace P.WindowsForms.Formularios
             formDisciplina.MdiParent = this;
             formDisciplina.Show();
         }
+
+        private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPessoa formPessoa = new FormPessoa();
+            formPessoa.MdiParent = this;
+            formPessoa.Show();
+        }
+
+        private void professorToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FormProfessor formProfessor = new FormProfessor();
+            formProfessor.MdiParent = this;
+            formProfessor.Show();
+        }
     }
 }

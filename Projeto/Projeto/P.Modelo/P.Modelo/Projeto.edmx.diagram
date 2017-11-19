@@ -14,7 +14,6 @@
         <AssociationConnector Association="faculdadeModel.id_fk_pessoaAluno" ManuallyRouted="false" />
         <AssociationConnector Association="faculdadeModel.id_fk_pessoaAlunoDisciplina" ManuallyRouted="false" />
         <AssociationConnector Association="faculdadeModel.id_fk_disciplinaAluno" ManuallyRouted="false" />
-        <AssociationConnector Association="faculdadeModel.id_fk_endereco" ManuallyRouted="false" />
         <AssociationConnector Association="faculdadeModel.id_fk_pessoaProfessor" ManuallyRouted="false" />
         <AssociationConnector Association="faculdadeModel.ProfessorDisciplina" ManuallyRouted="false" />
       </Diagram>

@@ -35,17 +35,14 @@
     <Property Name="idEndereco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="logradouro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="numero" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_endereco" FromRole="Endereco" ToRole="Pessoa" />
   </EntityType>
   <EntityType Name="Pessoa">
     <Key>
       <PropertyRef Name="idPessoa" />
     </Key>
     <Property Name="idPessoa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idEndereco" Type="Int32" Nullable="false" />
     <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAluno" FromRole="Pessoa" ToRole="Aluno" />
-    <NavigationProperty Name="Endereco" Relationship="Self.id_fk_endereco" FromRole="Pessoa" ToRole="Endereco" />
     <NavigationProperty Name="Professor" Relationship="Self.id_fk_pessoaProfessor" FromRole="Pessoa" ToRole="Professor" />
   </EntityType>
   <EntityType Name="Professor">
@@ -92,18 +89,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="id_fk_endereco">
-    <End Role="Endereco" Type="Self.Endereco" Multiplicity="1" />
-    <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Endereco">
-        <PropertyRef Name="idEndereco" />
-      </Principal>
-      <Dependent Role="Pessoa">
-        <PropertyRef Name="idEndereco" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="id_fk_pessoaProfessor">
     <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
     <End Role="Professor" Type="Self.Professor" Multiplicity="0..1" />
@@ -138,10 +123,6 @@
     <AssociationSet Name="id_fk_disciplinaAluno" Association="Self.id_fk_disciplinaAluno">
       <End Role="Disciplina" EntitySet="Disciplina" />
       <End Role="AlunoDisciplina" EntitySet="AlunoDisciplina" />
-    </AssociationSet>
-    <AssociationSet Name="id_fk_endereco" Association="Self.id_fk_endereco">
-      <End Role="Endereco" EntitySet="Endereco" />
-      <End Role="Pessoa" EntitySet="Pessoa" />
     </AssociationSet>
     <AssociationSet Name="id_fk_pessoaProfessor" Association="Self.id_fk_pessoaProfessor">
       <End Role="Pessoa" EntitySet="Pessoa" />

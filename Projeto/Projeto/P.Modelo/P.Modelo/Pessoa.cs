@@ -15,11 +15,9 @@ namespace P.Modelo
     public partial class Pessoa
     {
         public int idPessoa { get; set; }
-        public int idEndereco { get; set; }
         public string nome { get; set; }
     
         public virtual Aluno Aluno { get; set; }
-        public virtual Endereco Endereco { get; set; }
         public virtual Professor Professor { get; set; }
     }
 }

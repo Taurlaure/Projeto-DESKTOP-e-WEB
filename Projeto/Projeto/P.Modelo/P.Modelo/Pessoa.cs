@@ -16,6 +16,8 @@ namespace P.Modelo
     {
         public int idPessoa { get; set; }
         public string nome { get; set; }
+        public string endereco { get; set; }
+        public string numero { get; set; }
     
         public virtual Aluno Aluno { get; set; }
         public virtual Professor Professor { get; set; }

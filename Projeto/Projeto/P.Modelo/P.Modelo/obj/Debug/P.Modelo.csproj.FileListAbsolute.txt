@@ -8,3 +8,4 @@ C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\bin\Deb
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.dll
 C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.pdb
+C:\Users\Usuario\Projeto-DESKTOP-e-WEB\Projeto\Projeto\P.Modelo\P.Modelo\obj\Debug\P.Modelo.csprojResolveAssemblyReference.cache

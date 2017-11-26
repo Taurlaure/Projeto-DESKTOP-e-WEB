@@ -42,6 +42,16 @@ namespace P.WindowsForms.Formularios
             dataGridPessoa.Columns[1].Width = 150;
             dataGridPessoa.Columns[1].Name = "nome";
 
+            dataGridPessoa.Columns[2].HeaderText = "Endereço";
+            dataGridPessoa.Columns[2].DataPropertyName = "endereco";
+            dataGridPessoa.Columns[2].Width = 150;
+            dataGridPessoa.Columns[2].Name = "endereco";
+
+            dataGridPessoa.Columns[3].HeaderText = "Número";
+            dataGridPessoa.Columns[3].DataPropertyName = "numero";
+            dataGridPessoa.Columns[3].Width = 150;
+            dataGridPessoa.Columns[3].Name = "numero";
+
             carregarGrid();
         }
 
@@ -52,7 +62,9 @@ namespace P.WindowsForms.Formularios
                           select (new
                           {
                               pessoa.idPessoa,
-                              pessoa.nome
+                              pessoa.nome,
+                              pessoa.endereco,
+                              pessoa.numero
 
                           });
 
@@ -75,6 +87,8 @@ namespace P.WindowsForms.Formularios
 
             pessoa.idPessoa = IdPessoa;
             pessoa.nome = textBoxNomePessoa.Text;
+            pessoa.endereco = enderecoPessoa.Text;
+            pessoa.numero = textNumeroPessoa.Text;
 
             string mensagem = "";
 
@@ -87,6 +101,8 @@ namespace P.WindowsForms.Formularios
             {
                 var obj = db.Entry(pessoa);
                 obj.Property(x => x.nome).IsModified = true;
+                obj.Property(y => y.endereco).IsModified = true;
+                obj.Property(z => z.numero).IsModified = true;
 
                 mensagem = "Pessoa alterada com sucesso!!";
             }

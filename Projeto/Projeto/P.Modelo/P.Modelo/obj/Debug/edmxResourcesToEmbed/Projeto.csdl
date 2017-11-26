@@ -44,6 +44,8 @@
     <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAluno" FromRole="Pessoa" ToRole="Aluno" />
     <NavigationProperty Name="Professor" Relationship="Self.id_fk_pessoaProfessor" FromRole="Pessoa" ToRole="Professor" />
+    <Property Name="endereco" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="numero" Type="String" />
   </EntityType>
   <EntityType Name="Professor">
     <Key>

@@ -36,6 +36,8 @@
     </Key>
     <Property Name="idPessoa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="endereco" Type="varchar" MaxLength="120" />
+    <Property Name="numero" Type="varchar" MaxLength="5" />
   </EntityType>
   <EntityType Name="Professor">
     <Key>

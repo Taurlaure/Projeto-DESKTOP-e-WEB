@@ -92,7 +92,7 @@
             this.dataGridPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPessoa.Location = new System.Drawing.Point(22, 221);
             this.dataGridPessoa.Name = "dataGridPessoa";
-            this.dataGridPessoa.Size = new System.Drawing.Size(907, 293);
+            this.dataGridPessoa.Size = new System.Drawing.Size(488, 293);
             this.dataGridPessoa.TabIndex = 11;
             // 
             // labelEnderecoPessoA

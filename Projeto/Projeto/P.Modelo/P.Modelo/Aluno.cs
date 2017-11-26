@@ -21,6 +21,7 @@ namespace P.Modelo
         }
     
         public int idPessoaAluno { get; set; }
+        public int matricula { get; set; }
     
         public virtual Pessoa Pessoa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

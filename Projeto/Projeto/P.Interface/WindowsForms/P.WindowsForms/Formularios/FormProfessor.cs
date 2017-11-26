@@ -29,7 +29,7 @@ namespace P.WindowsForms.Formularios
             comboBoxProfessor.DisplayMember = "nome";
             comboBoxProfessor.ValueMember = "IdPessoa";
 
-            dataGridProfessor.ColumnCount = 2;
+            dataGridProfessor.ColumnCount = 3;
             dataGridProfessor.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridProfessor.MultiSelect = false;
             dataGridProfessor.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -39,10 +39,15 @@ namespace P.WindowsForms.Formularios
             dataGridProfessor.Columns[0].Name = "IdPessoaProfessor";
             dataGridProfessor.Columns[0].Width = 50;
 
-            dataGridProfessor.Columns[1].HeaderText = "Nome Professor";
-            dataGridProfessor.Columns[1].DataPropertyName = "nome";
-            dataGridProfessor.Columns[1].Name = "nome";
-            dataGridProfessor.Columns[1].Width = 150;
+            dataGridProfessor.Columns[1].HeaderText = "Matricula";
+            dataGridProfessor.Columns[1].DataPropertyName = "matricula";
+            dataGridProfessor.Columns[1].Name = "matricula";
+            dataGridProfessor.Columns[1].Width = 100;
+
+            dataGridProfessor.Columns[2].HeaderText = "Nome Professor";
+            dataGridProfessor.Columns[2].DataPropertyName = "nome";
+            dataGridProfessor.Columns[2].Name = "nome";
+            dataGridProfessor.Columns[2].Width = 150;
 
             CarregarGrid();
         }
@@ -52,7 +57,7 @@ namespace P.WindowsForms.Formularios
             var professores = from professor in db.Professor
                               join pessoa in db.Pessoa
                               on professor.idPessoaProfessor equals pessoa.idPessoa
-                              select (new { professor.idPessoaProfessor, pessoa.nome });
+                              select (new { professor.idPessoaProfessor,professor.matricula, pessoa.nome });
             dataGridProfessor.DataSource = professores.ToList();
 
         }

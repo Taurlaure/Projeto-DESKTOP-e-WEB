@@ -27,7 +27,7 @@ namespace P.WindowsForms.Formularios
             comboBoxAluno.DisplayMember = "nome";
             comboBoxAluno.ValueMember = "IdPessoa";
 
-            dataGridViewAluno.ColumnCount = 2;
+            dataGridViewAluno.ColumnCount = 3;
             dataGridViewAluno.EditMode = DataGridViewEditMode.EditProgrammatically;
             dataGridViewAluno.MultiSelect = false;
             dataGridViewAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -37,10 +37,15 @@ namespace P.WindowsForms.Formularios
             dataGridViewAluno.Columns[0].Name = "IdPessoaAluno";
             dataGridViewAluno.Columns[0].Width = 50;
 
-            dataGridViewAluno.Columns[1].HeaderText = "Nome Aluno";
-            dataGridViewAluno.Columns[1].DataPropertyName = "nome";
-            dataGridViewAluno.Columns[1].Name = "nome";
-            dataGridViewAluno.Columns[1].Width = 150;
+            dataGridViewAluno.Columns[1].HeaderText = "Matricula";
+            dataGridViewAluno.Columns[1].DataPropertyName = "matricula";
+            dataGridViewAluno.Columns[1].Name = "matricula";
+            dataGridViewAluno.Columns[1].Width = 100;
+
+            dataGridViewAluno.Columns[2].HeaderText = "Nome Aluno";
+            dataGridViewAluno.Columns[2].DataPropertyName = "nome";
+            dataGridViewAluno.Columns[2].Name = "nome";
+            dataGridViewAluno.Columns[2].Width = 150;
 
             CarregarGrid();
         }
@@ -50,7 +55,7 @@ namespace P.WindowsForms.Formularios
             var alunos = from aluno in db.Aluno
                               join pessoa in db.Pessoa
                               on aluno.idPessoaAluno equals pessoa.idPessoa
-                              select (new { aluno.idPessoaAluno, pessoa.nome });
+                              select (new { aluno.idPessoaAluno,aluno.matricula, pessoa.nome });
 
             dataGridViewAluno.DataSource = alunos.ToList();
 

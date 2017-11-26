@@ -5,6 +5,7 @@
       <PropertyRef Name="idPessoaAluno" />
     </Key>
     <Property Name="idPessoaAluno" Type="int" Nullable="false" />
+    <Property Name="matricula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="AlunoDisciplina">
     <Key>
@@ -44,6 +45,7 @@
       <PropertyRef Name="idPessoaProfessor" />
     </Key>
     <Property Name="idPessoaProfessor" Type="int" Nullable="false" />
+    <Property Name="matricula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="ProfessorDisciplina">
     <Key>

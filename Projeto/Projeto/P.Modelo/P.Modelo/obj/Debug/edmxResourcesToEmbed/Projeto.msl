@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Aluno">
       <EntityTypeMapping TypeName="faculdadeModel.Aluno">
         <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
           <ScalarProperty Name="idPessoaAluno" ColumnName="idPessoaAluno" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -47,6 +48,7 @@
     <EntitySetMapping Name="Professor">
       <EntityTypeMapping TypeName="faculdadeModel.Professor">
         <MappingFragment StoreEntitySet="Professor">
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
           <ScalarProperty Name="idPessoaProfessor" ColumnName="idPessoaProfessor" />
         </MappingFragment>
       </EntityTypeMapping>

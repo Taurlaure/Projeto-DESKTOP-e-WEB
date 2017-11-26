@@ -10,6 +10,7 @@
             <PropertyRef Name="idPessoaAluno" />
           </Key>
           <Property Name="idPessoaAluno" Type="int" Nullable="false" />
+          <Property Name="matricula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="AlunoDisciplina">
           <Key>
@@ -49,6 +50,7 @@
             <PropertyRef Name="idPessoaProfessor" />
           </Key>
           <Property Name="idPessoaProfessor" Type="int" Nullable="false" />
+          <Property Name="matricula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="ProfessorDisciplina">
           <Key>
@@ -174,6 +176,7 @@
           <Property Name="idPessoaAluno" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_pessoaAluno" FromRole="Aluno" ToRole="Pessoa" />
           <NavigationProperty Name="AlunoDisciplina" Relationship="Self.id_fk_pessoaAlunoDisciplina" FromRole="Aluno" ToRole="AlunoDisciplina" />
+          <Property Name="matricula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="AlunoDisciplina">
           <Key>
@@ -212,7 +215,7 @@
           <NavigationProperty Name="Aluno" Relationship="Self.id_fk_pessoaAluno" FromRole="Pessoa" ToRole="Aluno" />
           <NavigationProperty Name="Professor" Relationship="Self.id_fk_pessoaProfessor" FromRole="Pessoa" ToRole="Professor" />
           <Property Name="endereco" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="numero" Type="String" />
+          <Property Name="numero" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
         </EntityType>
         <EntityType Name="Professor">
           <Key>
@@ -221,6 +224,7 @@
           <Property Name="idPessoaProfessor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Pessoa" Relationship="Self.id_fk_pessoaProfessor" FromRole="Professor" ToRole="Pessoa" />
           <NavigationProperty Name="Disciplina" Relationship="Self.ProfessorDisciplina" FromRole="Professor" ToRole="Disciplina" />
+          <Property Name="matricula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="id_fk_pessoaAluno">
           <End Role="Pessoa" Type="Self.Pessoa" Multiplicity="1" />
@@ -311,6 +315,7 @@
           <EntitySetMapping Name="Aluno">
             <EntityTypeMapping TypeName="faculdadeModel.Aluno">
               <MappingFragment StoreEntitySet="Aluno">
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
                 <ScalarProperty Name="idPessoaAluno" ColumnName="idPessoaAluno" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -354,6 +359,7 @@
           <EntitySetMapping Name="Professor">
             <EntityTypeMapping TypeName="faculdadeModel.Professor">
               <MappingFragment StoreEntitySet="Professor">
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
                 <ScalarProperty Name="idPessoaProfessor" ColumnName="idPessoaProfessor" />
               </MappingFragment>
             </EntityTypeMapping>
